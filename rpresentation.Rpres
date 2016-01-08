@@ -1,0 +1,48 @@
+Developing product project
+========================================================
+author: Basma Nasser
+date: Aug,22,2015
+
+Developing product project
+========================================================
+
+This is developing data course project has two parts. First, to create a Shiny application and deploy it on Rstudio's servers. Second, use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application.
+
+Introduction
+========================================================
+
+we are usind Diamond Explorer project which shows the relation between prices and 54,000 different type of diamonds.
+                           
+1- you can select small sample or the whole data.
+
+2- you can select different columns to compare with in X and Y axis.
+
+3- can select to smooth or jitter graph type to be added to the diagram.
+
+4- in addition, you can diffrentiate the diagram to different group by selecting color facet. Ex: group by cuts or prices
+                           
+
+Diamonds Sample
+======================================================
+
+```{r}
+library(ggplot2)
+head(diamonds,3)
+```
+
+
+Relationship between caret and diamond cuts
+======================================================
+ 
+ 
+```{r, echo=FALSE}
+
+qplot(diamonds$carat,diamonds$cut)
+```
+
+
+Application View
+======================================================
+ 
+![plot](untitled2.png) 
+

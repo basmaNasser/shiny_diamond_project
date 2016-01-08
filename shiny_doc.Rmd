@@ -1,0 +1,29 @@
+---
+title: "shiny_project"
+author: "Basma Nasser"
+date: "Saturday, August 22, 2015"
+output: html_document
+runtime: shiny
+---
+
+This is developing data course project has two parts. First, to create a Shiny application and deploy it on Rstudio's servers. Second, use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application.
+
+
+##Diamond Explorer
+
+This graph show relation between column of Diamond dataset by selecting x and y axis variables.Also you can change number of samples to show .
+
+```{r}
+library(ggplot2)
+data(diamonds)
+names(diamonds)
+```
+
+```{r, echo = FALSE}
+shinyAppDir(
+  system.file("D:/88MA/ebooks/big_data/data science- coursera/developing data/course_project/shiny-project/developing_project"),
+  options=list(
+    width="100%", height=700
+  )
+)
+```

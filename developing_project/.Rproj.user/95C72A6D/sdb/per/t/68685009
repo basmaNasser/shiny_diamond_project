@@ -1,0 +1,16 @@
+{
+    "contents" : "\n\nlibrary(shiny)\nlibrary(ggplot2)\n\nshinyServer(function(input, output) {\n        \n        dataset <- reactive({\n                #get sample of data set\n                diamonds[sample(nrow(diamonds), input$sampleSize),]\n        })\n        \n        output$plot <- renderPlot({\n                \n                p <- ggplot(dataset(), aes_string(x=input$x, y=input$y)) + geom_point()\n                \n                if (input$color != 'None')\n                        p <- p + aes_string(color=input$color)\n               \n                 facets <- paste(input$facet_row, '~', input$facet_col)\n               if (facets != '. ~ .')\n                       p <- p + facet_grid(facets)\n                \n                 if (input$jitter)\n                         p <- p + geom_jitter()\n                 if (input$smooth)\n                       p <- p + geom_smooth()\n                \n                print(p)\n                \n        })\n        \n})\n",
+    "created" : 1440241793441.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "552455465",
+    "id" : "68685009",
+    "lastKnownWriteTime" : 1440234318,
+    "path" : "D:/88MA/ebooks/big_data/data science- coursera/developing data/course_project/shiny-project/developing_project/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

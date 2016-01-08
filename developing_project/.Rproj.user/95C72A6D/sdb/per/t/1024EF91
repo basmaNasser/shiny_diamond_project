@@ -1,0 +1,17 @@
+{
+    "contents" : "---\ntitle: \"shiny_project\"\nauthor: \"Basma Nasser\"\ndate: \"Saturday, August 22, 2015\"\noutput: html_document\nruntime: shiny\n---\n\nThis is developing data course project has two parts. First, to create a Shiny application and deploy it on Rstudio's servers. Second, use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application.\n\n\n##Diamond Explorer\n\nThis graph show relation between column of Diamond dataset by selecting x and y axis variables.Also you can change number of samples to show .\n\n```{r}\nlibrary(ggplot2)\ndata(diamonds)\nnames(diamonds)\n```\n\n```{r, echo = FALSE}\nshinyAppDir(\n  system.file(\"D:/88MA/ebooks/big_data/data science- coursera/developing data/course_project/shiny-project/developing_project\"),\n  options=list(\n    width=\"100%\", height=700\n  )\n)\n```\n",
+    "created" : 1440239340783.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "4160158420",
+    "id" : "1024EF91",
+    "lastKnownWriteTime" : 1440241776,
+    "path" : "D:/88MA/ebooks/big_data/data science- coursera/developing data/course_project/shiny-project/shiny_doc.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

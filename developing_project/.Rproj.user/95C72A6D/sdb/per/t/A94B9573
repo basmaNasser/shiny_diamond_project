@@ -1,0 +1,16 @@
+{
+    "contents" : "source('global.R')\n\nlibrary(shiny)\nlibrary(ggplot2)\n\ndataset <- diamonds\n\nshinyUI(fluidPage(\n        \n        title = \"Diamonds Explorer\",\n        \n        plotOutput('plot'),\n        \n        hr(),\n        \n        fluidRow(\n                column(3,\n                       h4(\"Diamonds Explorer\"),\n                       sliderInput('sampleSize', 'Sample Size', \n                                   min=1, max=nrow(dataset), value=min(1000, nrow(dataset)), \n                                   step=500, round=0),\n                       br(),\n                       checkboxInput('jitter', 'Jitter'),\n                       checkboxInput('smooth', 'Smooth')\n                ),\n                column(4, offset = 1,\n                       selectInput('x', 'X', names(dataset)),\n                       selectInput('y', 'Y', names(dataset), names(dataset)[[2]]),\n                       selectInput('color', 'Color', c('None', names(dataset)))\n                ),\n                column(4,\n                       selectInput('facet_row', 'Facet Row', c(None='.', names(dataset))),\n                       selectInput('facet_col', 'Facet Column', c(None='.', names(dataset)))\n                )\n        )\n))\n",
+    "created" : 1440241760383.000,
+    "dirty" : false,
+    "encoding" : "ISO8859-1",
+    "folds" : "",
+    "hash" : "1314074813",
+    "id" : "A94B9573",
+    "lastKnownWriteTime" : 1440241764,
+    "path" : "D:/88MA/ebooks/big_data/data science- coursera/developing data/course_project/shiny-project/developing_project/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
